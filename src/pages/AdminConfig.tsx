@@ -1,6 +1,8 @@
 import React from 'react';
 import { SportConfigEditor } from '../features/admin/SportConfigEditor';
 import { LeagueManager } from '../features/admin/LeagueManager';
+import { TeamManager } from '../features/admin/TeamManager';
+import { MatchupScheduler } from '../features/admin/MatchupScheduler';
 
 export const AdminConfig: React.FC = () => {
     return (
@@ -11,7 +13,11 @@ export const AdminConfig: React.FC = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <SportConfigEditor />
-                    <LeagueManager />
+                    <div className="space-y-8">
+                        <LeagueManager />
+                        <TeamManager />
+                        <MatchupScheduler />
+                    </div>
                 </div>
             </div>
         </div>

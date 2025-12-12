@@ -18,6 +18,7 @@ interface AppState {
     addLeague: (league: League) => void;
     setActiveLeague: (id: string) => void;
     addTeamToLeague: (leagueId: string, team: Team) => void;
+    addMatchup: (matchup: Matchup) => void;
 }
 
 // Mock Initial Data
@@ -74,4 +75,8 @@ export const useStore = create<AppState>((set) => ({
             }
         };
     }),
+
+    addMatchup: (matchup) => set((state) => ({
+        matchups: { ...state.matchups, [matchup.id]: matchup }
+    })),
 }));
